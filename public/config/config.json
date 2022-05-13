@@ -1,0 +1,14 @@
+{
+    "CONTRACT_ADDRESS": "0x85037b96f15e4dc91fada95d449eb78a6b59eb38",
+    "SCAN_LINK": "https://ropsten.etherscan.io/address/0x85037b96f15e4dc91fada95d449eb78a6b59eb38",
+    "NETWORK": {
+        "NAME": "Ethereum",
+        "SYMBOL": "ETH",
+        "ID": 3
+    },
+    "DISPLAY_COST": 0.2,
+    "GAS_LIMIT": 285000,
+    "MARKETPLACE": "Opeansea",
+    "MARKETPLACE_LINK": "https://opensea.io/collection/",
+    "SHOW_BACKGROUND": true
+}

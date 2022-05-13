@@ -1,0 +1,832 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_assetTypeName",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_assetPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "addNewAssetType",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "_postedAssets",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "string",
+        "name": "_escrowname",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_assetTypeID",
+        "type": "uint256"
+      }
+    ],
+    "name": "addNewProducer",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "postedAssets",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "remainingAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool[]",
+            "name": "postedAssetsIsRedeemed",
+            "type": "bool[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isActive",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemAmountPerNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "assetTypeName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetTypeID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "providerArray",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct EscrowProducer.ProducerStruct",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "_collectedAssets",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "addProvider",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_assetTypeID",
+        "type": "uint256"
+      }
+    ],
+    "name": "checkValidAssetTypeID",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "defaultEscrowFee",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAssetsTypeArray",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "assetTypeID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "assetTypeName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isActive",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct AssetType.AssetsTypeStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getProducerInfoArray",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "remainingAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isActive",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemAmountPerNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "assetTypeName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetTypeID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "providerArray",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct EscrowProducer.ProducerInfoStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_producer",
+        "type": "address"
+      }
+    ],
+    "name": "getProducerInfoArrayByAddress",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "remainingAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isActive",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemAmountPerNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "assetTypeName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetTypeID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "providerArray",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct EscrowProducer.ProducerInfoStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_escrowID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getProducerInfoByID",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedQuantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "remainingAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isActive",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemAmountPerNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "assetTypeName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "assetTypeID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "providerArray",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct EscrowProducer.ProducerInfoStruct",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getProviderInfoArray",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "providerID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "provider",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct EscrowProvider.ProviderInfoStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_provider",
+        "type": "address"
+      }
+    ],
+    "name": "getProviderInfoArrayByAddress",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "providerID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "provider",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct EscrowProvider.ProviderInfoStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_providerID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getProviderInfoByID",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "providerID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "escrowID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "escrowName",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "producer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "provider",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quantity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "redeemedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateReceivedAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct EscrowProvider.ProviderInfoStruct",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "producerRedeemPercentage",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "providerRedeemPercentage",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_assetTypeID",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_isActive",
+        "type": "bool"
+      }
+    ],
+    "name": "setAssetTypeStatus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
